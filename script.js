@@ -5,20 +5,10 @@ $(document).ready(function(){
 
     $(".saveBtn").on("click",function(){
         var activity = $(this).siblings(".description").val();
-      
         var time = $(this).parent().attr("id");
-   
         localStorage.setItem(time,activity);
-        console.log(localStorage);
-    });
-
+        });
 })
-
-
-
-
-
-
 
 // //saving locally
 
@@ -67,7 +57,7 @@ $("#hour-6 .description").val(localStorage.getItem("hour-6"));
 
 
 // today on a page
-// $("#currentDay").text(moment().format("dddd, MMMM))
+ $("#currentDay").text(moment().format("MMMM Do YYYY"));
 
 
 

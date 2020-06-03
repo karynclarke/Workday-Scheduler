@@ -10,12 +10,13 @@ $(document).ready(function(){
         });
 })
 
-// //saving locally
+
 
 function hourUpdater() {
     var currentHour = moment().hours();
     console.log(currentHour)
-// //time
+
+
     $(".time-block").each(function() {
         var blockHour = parseInt($(this).attr("id").split("-")[1]);
         console.log(blockHour)
@@ -63,5 +64,5 @@ $("#hour-6 .description").val(localStorage.getItem("hour-6"));
 
 
 
-// //show new list 
+
 

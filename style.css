@@ -10,11 +10,20 @@ body {
   color: rgb(51, 48, 54);
   border-bottom: 5px;
 }
-
+/*
+textarea{
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+*/
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color: rgb(200, 200, 200);
   color: black;
   border-bottom: 7px solid black;
 }

@@ -1,13 +1,16 @@
-$(document).ready(function(){
+$(document).ready(function() {
     var currentDay = moment();
     console.log(currentDay)
 
 
-    $(".saveBtn").on("click",function(){
+    $(".saveBtn").on("click", function() {
+
+        event.preventDefault();
+
         var activity = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
-        localStorage.setItem(time,activity);
-        });
+        localStorage.setItem(time, activity);
+    });
 })
 
 
@@ -20,29 +23,27 @@ function hourUpdater() {
     $(".time-block").each(function() {
         var blockHour = parseInt($(this).attr("id").split("-")[1]);
         console.log(blockHour)
-    
-    
-        
+
+
+
         //time issues
         if (blockHour < currentHour) {
             $(this).addClass("past");
-        }
-        else if (blockHour === currentHour) {
+        } else if (blockHour === currentHour) {
             $(this).removeClass("past");
             $(this).addClass("present");
-        }
-        else { 
+        } else {
             $(this).removeClass("past");
             $(this).removeClass("present");
             $(this).addClass("future");
         }
     })
 }
-        
-    hourUpdater();
+
+hourUpdater();
 
 
-// data from local storage - maybe make this a loop?
+// data from local storage 
 $("#hour-7 .description").val(localStorage.getItem("hour-7"));
 $("#hour-8 .description").val(localStorage.getItem("hour-8"));
 $("#hour-9 .description").val(localStorage.getItem("hour-9"));
@@ -58,11 +59,4 @@ $("#hour-6 .description").val(localStorage.getItem("hour-6"));
 
 
 // today on a page
- $("#currentDay").text(moment().format("MMMM Do YYYY"));
-
-
-
-
-
-
-
+$("#currentDay").text(moment().format("MMMM Do YYYY"));
